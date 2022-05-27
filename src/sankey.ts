@@ -35,7 +35,8 @@ const vis: Sankey = {
       type: 'string',
       values: [
         { 'Name': 'name' },
-        { 'Name (value)': 'name_value' }
+        { 'Name (value)': 'name_value' },
+        { 'Name (percent)': 'name_percent' }
       ]
     },
     show_null_points: {
@@ -275,6 +276,8 @@ const vis: Sankey = {
           case 'name':
             return d.name
           case 'name_value':
+            return `${d.name} (${!!val_format ? SSF(val_format, d.value) : d.value})`
+          case 'name_percent':
             return `${d.name} (${!!val_format ? SSF(val_format, d.value) : d.value})`
           default:
             return ''
