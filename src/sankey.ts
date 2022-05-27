@@ -42,7 +42,7 @@ const vis: Sankey = {
     show_null_points: {
       type: 'boolean',
       label: 'Plot Null Values',
-      default: true
+      default: false
     }
   },
   // Set up the initial state of the visualization
