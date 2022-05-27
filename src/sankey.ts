@@ -42,7 +42,7 @@ const vis: Sankey = {
     show_null_points: {
       type: 'boolean',
       label: 'Plot Null Values',
-      default: false
+      default: true
     }
   },
   // Set up the initial state of the visualization
@@ -278,7 +278,7 @@ const vis: Sankey = {
           case 'name_value':
             return `${d.name} (${!!val_format ? SSF(val_format, d.value) : d.value})`
           case 'name_percent':
-            return `${d.name} (${!!val_format ? SSF(val_format, d.value) : d.value})`
+            return `${d.name}${d.name} (${!!val_format ? SSF(val_format, d.value) : d.value})`
           default:
             return ''
         }
